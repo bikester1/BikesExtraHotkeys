@@ -1,6 +1,6 @@
 ﻿<Publish>
-	<ModId Value="104919" />
-	<DisplayName Value="[KS] Extra Hotkeys" />
+	<ModId Value="" />
+	<DisplayName Value="[Bikes] Extra Hotkeys" />
 	<ShortDescription Value="This mod adds extra hotkeys to the game that should have been there by default." />
 	<LongDescription>
 Extra Hotkeys is a powerful quality-of-life mod for Cities: Skylines 2, designed to enhance your gameplay experience by introducing additional hotkeys and intuitive controls that should have been there from the start.
@@ -19,7 +19,7 @@ Extra Hotkeys is a powerful quality-of-life mod for Cities: Skylines 2, designed
 
 ## 🎮 Installation and Setup
 
-- Download the mod from Paradox Mods, [Skyve](https://mods.paradoxplaza.com/mods/75804/Windows), or the in-game mod browser.
+- Download the mod from Paradox Mods, or the in-game mod browser.
 - Open the Options Menu in Cities: Skylines 2.
 - Navigate to the "Extra Hotkeys" tab.
 - Customize hotkeys to match your play style.
@@ -34,6 +34,7 @@ Extra Hotkeys is a powerful quality-of-life mod for Cities: Skylines 2, designed
 ## 👑 Credits
 
 💡 Original Mod by Fenrir
+💡 Updated by kelvinspaces
 
 ## Special Thanks
 - [Yenyang](https://mods.paradoxplaza.com/authors/yenyang)
@@ -65,14 +66,15 @@ Take your Cities: Skylines 2 experience to the next level with ExtraHotkeys! �
 	<Screenshot Value="Properties/screenshot-3.png" />
 	<Screenshot Value="Properties/screenshot-4.png" />
 	<Tag Value="Code Mod" />
-	<ModVersion Value="2.1.2" />
-	<GameVersion Value="1.2.*" />
+	<ModVersion Value="2.1.3" />
+	<GameVersion Value="1.3.*" />
 	<ChangeLog>
+# 2.1.3
+- Updated for 1.3.3f1
+
 # 2.1.2
 - Make setting file unique.
 - Hotfix for namespace conflict.
 	</ChangeLog>
-	<ExternalLink Type="github" Url="https://github.com/kelvinspaces/KSExtraHotkey" />
-	<ExternalLink Type="discord" Url="https://discord.com/channels/1024242828114673724/1219598270406594660/1219598270406594660" />
-	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/extra-hotkey-v2.1732554/" />
+
 </Publish>
