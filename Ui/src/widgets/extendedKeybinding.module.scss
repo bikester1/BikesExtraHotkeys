@@ -1,0 +1,45 @@
+﻿@import '../assets/scss/flex';
+@import '../assets/scss/border';
+
+.ksHotkeyExdKeyBinding
+{
+    --ks-icon-wrapper-size          : 40rem;
+    --ks-icon-wrapper-border-color  : #3a4046;
+    --ks-icon-wrapper-border-width  : 1rem;
+    --ks-icon-wrapper-border-style  : solid;
+    --ks-icon-wrapper-bg            : rgba(0,0,0,.48);
+    --ks-icon--size                 : 24rem;
+
+    @include                          flexbox(row, center, space-between);
+
+    &Icon
+    {
+        @include                      flexbox(column, center, center);
+        @include                      borderAll(
+                                        var(--ks-icon-wrapper-border-width), 
+                                        var(--ks-icon-wrapper-border-style), 
+                                        var(--ks-icon-wrapper-border-color)
+                                      );
+        width                       : var(--ks-icon-wrapper-size);
+        height                      : var(--ks-icon-wrapper-size);
+        background-color            : var(--ks-icon-wrapper-bg);
+        margin-right                : 4rem;
+        border-radius               : 4rem;
+
+        img
+        {
+            width                   : var(--ks-icon--size);
+            height                  : var(--ks-icon--size);
+        }
+    }
+
+    &Contents
+    {
+        flex-grow                   : 1;
+
+        > *
+        {
+            padding-left            : 8rem;
+        }
+    }
+}

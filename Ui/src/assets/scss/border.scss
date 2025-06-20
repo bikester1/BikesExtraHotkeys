@@ -1,0 +1,15 @@
+@mixin borderAll($width, $type, $color) 
+{
+    border-left-color           : $color;
+    border-left-style           : $type;
+    border-left-width           : $width;
+    border-right-color          : $color;
+    border-right-style          : $type;
+    border-right-width          : $width;
+    border-top-color            : $color;
+    border-top-style            : $type;
+    border-top-width            : $width;
+    border-bottom-color         : $color;
+    border-bottom-style         : $type;
+    border-bottom-width         : $width;
+} 

@@ -1,0 +1,33 @@
+@mixin flexbox($direction, $align:null, $justify:null) 
+{
+    @if ($justify == null and $align != null) 
+    {
+        display: flex;
+        flex-direction: $direction;
+        align-items: $align;
+    }
+    @if ($align == null and $justify != null) 
+    {
+        display: flex;
+        flex-direction: $direction;
+        justify-content: $justify;
+    }
+    @if ($align == null and $justify == null) 
+    {
+        display: flex;
+        flex-direction: $direction;
+    }
+
+    @if ($align != null and $justify != null) 
+    {
+        display: flex;
+        flex-direction: $direction;
+        justify-content: $justify;
+        align-items: $align;
+    }
+}
+
+@mixin flex($values) 
+{
+    flex:  $values;
+}

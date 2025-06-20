@@ -1,0 +1,7 @@
+﻿@import '../assets/scss/flex';
+@import '../assets/scss/border';
+
+.ksHotkeyBreadcumbs
+{
+    @include                          flexbox(row, center, space-between);
+}
