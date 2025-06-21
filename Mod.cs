@@ -21,7 +21,7 @@ namespace BikesExtraHotKey
       private LocalizationManager LocalizationManager => GameManager.instance.localizationManager;
       private string modPath;
 
-      public static ILog Logger = LogManager.GetLogger("Kelvinspaces.Hotkey").SetShowsErrorsInUI(false);
+      public static ILog Logger = LogManager.GetLogger("Bikester1.Hotkey").SetShowsErrorsInUI(false);
 
       public void OnLoad(UpdateSystem updateSystem)
       {

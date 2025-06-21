@@ -78,6 +78,6 @@
   "Options.OPTION[BikesExtraHotKeys.BikesExtraHotKey.Hotkey.ModSettings.ShowContourLinesKeyBinding]": "등고선",
   "Options.OPTION[BikesExtraHotKeys.BikesExtraHotKey.Hotkey/ShowContourLinesKeyBinding/binding]": "등고선",
   "Options.OPTION_DESCRIPTION[BikesExtraHotKeys.BikesExtraHotKey.Hotkey.ModSettings.ShowContourLinesKeyBinding]": "등고선 표시",
-  "Options.OPTION[BikesExtraHotKeys.BikesExtraHotKey.Hotkey.ModSettings.ModVersion]": "Fenrir 제작, Kelvin 업데이트",
+  "Options.OPTION[BikesExtraHotKeys.BikesExtraHotKey.Hotkey.ModSettings.ModVersion]": "Fenrir 제작, Kelvin 업데이트, Bikester1 업데이트",
   "Options.OPTION_DESCRIPTION[BikesExtraHotKeys.BikesExtraHotKey.Hotkey.ModSettings.ModVersion]": ""
 }
