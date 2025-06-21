@@ -3,11 +3,11 @@ using Game.Input;
 using Game.Tools;
 using System;
 using System.Collections.Generic;
-using KSExtraHotkey.Settings;
-using KSExtraHotkey;
-using KSExtraHotkey.Input;
+using BikesExtraHotKey.Settings;
+using BikesExtraHotKey;
+using BikesExtraHotKey.Input;
 
-namespace KSExtraHotkey.Models.Tools
+namespace BikesExtraHotKey.Models.Tools
 {
     public class ToolSnapOptionsManager
     {

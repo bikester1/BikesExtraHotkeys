@@ -6,12 +6,12 @@ using Game.Tools;
 using Game.UI;
 using Game.UI.InGame;
 using System;
-using KSExtraHotkey;
-using KSExtraHotkey.Settings;
-using KSExtraHotkey.Input;
-using KSExtraHotkey.Models.Tools;
+using BikesExtraHotKey;
+using BikesExtraHotKey.Settings;
+using BikesExtraHotKey.Input;
+using BikesExtraHotKey.Models.Tools;
 
-namespace KSExtraHotkey.UiSystem
+namespace BikesExtraHotKey.UiSystem
 {
     public partial class UISystem : UISystemBase
     {

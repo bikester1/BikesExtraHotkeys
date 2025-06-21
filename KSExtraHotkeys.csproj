@@ -4,7 +4,7 @@
 		<Configurations>Debug;Release</Configurations>
 
 		<PublishConfigurationPath>Properties\PublishConfiguration.xml</PublishConfigurationPath>
-		<Title>KS Extra Hotkeys</Title>
+		<Title>Bikes Extra Hotkeys</Title>
 		<Version>2.1.2</Version>
 		<AssemblyVersion>2.1.2</AssemblyVersion>
 		<Description>This mod adds extra hotkeys to the game that should have been there by default.</Description>
@@ -118,7 +118,7 @@
 		<None Remove=".gitattributes" />
 		<None Remove=".gitignore" />
 		<None Remove="ExtraHotkeys.sln.DotSettings" />
-		<None Remove="KSExtraHotkeys.csproj.DotSettings" />
+		<None Remove="BikesExtraHotKeys.csproj.DotSettings" />
 		<None Remove="LICENSE" />
 		<None Remove="README.md" />
 	</ItemGroup>

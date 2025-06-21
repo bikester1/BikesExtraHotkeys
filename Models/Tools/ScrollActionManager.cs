@@ -1,10 +1,10 @@
 ﻿using Game.Tools;
-using KSExtraHotkey.Settings;
-using KSExtraHotkey;
-using KSExtraHotkey.Input;
-using KSExtraHotkey.Models.Tools;
+using BikesExtraHotKey.Settings;
+using BikesExtraHotKey;
+using BikesExtraHotKey.Input;
+using BikesExtraHotKey.Models.Tools;
 
-namespace KSExtraHotkey.Models.Tools
+namespace BikesExtraHotKey.Models.Tools
 {
     public class ScrollActionManager
     {

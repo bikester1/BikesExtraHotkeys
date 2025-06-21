@@ -3,12 +3,12 @@ using Game.Input;
 using Game.Prefabs;
 using System.Collections.Generic;
 using Unity.Entities;
-using KSExtraHotkey;
-using KSExtraHotkey.Settings;
-using KSExtraHotkey.Input;
+using BikesExtraHotKey;
+using BikesExtraHotKey.Settings;
+using BikesExtraHotKey.Input;
 using Unity.Collections;
 
-namespace KSExtraHotkey.Models.Tools
+namespace BikesExtraHotKey.Models.Tools
 {
     public class ToolWindowManager
     {

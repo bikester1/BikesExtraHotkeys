@@ -1,10 +1,10 @@
 ﻿using Game;
 using Game.Input;
 using System;
-using KSExtraHotkey.Settings;
+using BikesExtraHotKey.Settings;
 using UnityEngine.InputSystem;
 
-namespace KSExtraHotkey.Input
+namespace BikesExtraHotKey.Input
 {
     public class UIInputManager
     {

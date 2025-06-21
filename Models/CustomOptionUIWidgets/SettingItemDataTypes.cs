@@ -1,7 +1,7 @@
 ﻿using Game.UI.Menu;
 using Game.UI.Widgets;
 
-namespace KSExtraHotkey.CustomOptionUIWidgets
+namespace BikesExtraHotKey.CustomOptionUIWidgets
 {
     public static class SettingItemDataTypes
     {

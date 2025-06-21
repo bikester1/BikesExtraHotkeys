@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reflection;
 using Colossal.Reflection;
-using KSExtraHotkey.CustomOptionUIWidgets;
+using BikesExtraHotKey.CustomOptionUIWidgets;
 using Game.Settings;
 using Game.UI.Menu;
 using Game.UI.Widgets;
-using KSExtraHotkey;
-using KSExtraHotkey.Models.Ui;
+using BikesExtraHotKey;
+using BikesExtraHotKey.Models.Ui;
 
-namespace KSExtraHotkey.Settings
+namespace BikesExtraHotKey.Settings
 {
     public partial class ModSettings
     {
@@ -126,7 +126,7 @@ namespace KSExtraHotkey.Settings
 
                             settingItemData = GetSettingsItemData(customWidgetType, setting, property, pageData.prefix);
 
-                            Hotkey.Logger.Info("KSHotKey Init " + property);
+                            Hotkey.Logger.Info("BikeHotKey Init " + property);
 
                             #endregion
                         }

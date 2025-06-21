@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Colossal.UI;
 
-namespace KSExtraHotkey.Models.Helper
+namespace BikesExtraHotKey.Models.Helper
 {
     public static class Icons
     {

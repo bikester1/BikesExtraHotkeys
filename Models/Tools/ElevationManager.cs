@@ -1,11 +1,11 @@
 ﻿using cohtml.Net;
 using Game.SceneFlow;
 using Game.Tools;
-using KSExtraHotkey.Input;
+using BikesExtraHotKey.Input;
 using System;
-using KSExtraHotkey.Settings;
+using BikesExtraHotKey.Settings;
 
-namespace KSExtraHotkey.Models.Tools
+namespace BikesExtraHotKey.Models.Tools
 {
     public class ElevationManager
     {

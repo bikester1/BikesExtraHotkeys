@@ -1,9 +1,9 @@
 ﻿using System;
 using Game.Input;
 using Game.Settings;
-using KSExtraHotkey.Models.Tools;
+using BikesExtraHotKey.Models.Tools;
 
-namespace KSExtraHotkey.Models.Ui
+namespace BikesExtraHotKey.Models.Ui
 {
         public static class UIAttributes
     {

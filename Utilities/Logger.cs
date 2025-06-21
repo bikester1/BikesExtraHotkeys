@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Reflection;
 
-namespace KSExtraHotkey.Debugger
+namespace BikesExtraHotKey.Debugger
 {
     public class Logger
     {

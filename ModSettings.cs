@@ -6,10 +6,10 @@ using Game.UI.Menu;
 using System.Linq;
 using System;
 using System.Reflection;
-using KSExtraHotkey.Models.Ui;
-using KSExtraHotkey.Constants;
+using BikesExtraHotKey.Models.Ui;
+using BikesExtraHotKey.Constants;
 
-namespace KSExtraHotkey.Settings
+namespace BikesExtraHotKey.Settings
 {
     [FileLocation(Global.Settings)]
     [SettingsUIGroupOrder(gOpenToolsKeybindings, gRoadToolModeKeybindings, gZonesToolModeKeybindings, gSnappingKeybindings, gGeneral, gToolRelated, gAbout)]

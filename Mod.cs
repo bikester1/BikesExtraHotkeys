@@ -6,14 +6,14 @@ using Game.Modding;
 using Game.SceneFlow;
 using System.Reflection;
 using System.IO;
-using KSExtraHotkey.UiSystem;
-using KSExtraHotkey.Settings;
-using KSExtraHotkey.Models.Helper;
-using KSExtraHotkey.Models.Localization;
+using BikesExtraHotKey.UiSystem;
+using BikesExtraHotKey.Settings;
+using BikesExtraHotKey.Models.Helper;
+using BikesExtraHotKey.Models.Localization;
 using Colossal.PSI.Common;
-using KSExtraHotkey.Constants;
+using BikesExtraHotKey.Constants;
 
-namespace KSExtraHotkey
+namespace BikesExtraHotKey
 {
     public class Hotkey : IMod
     {

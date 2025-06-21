@@ -1,4 +1,4 @@
-﻿namespace KSExtraHotkey.Constants
+﻿namespace BikesExtraHotKey.Constants
 {
     public class IconPath
     {
