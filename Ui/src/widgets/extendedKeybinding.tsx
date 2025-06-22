@@ -9,13 +9,13 @@ const InputBinding: FC<Widget<any>> = getModule('game-ui/menu/widgets/input-bind
 export const ExtendedKeybinding = (data: Widget<{ icon?: string }>) => {
   const hasIcon = !!data.props.icon;
   return (
-    <div className={classNames(styles.ksHotkeyExdKeyBinding)}>
-      {hasIcon && <div className={classNames(styles.ksHotkeyExdKeyBindingIcon)}>
-        <img src={data.props.icon} />
-      </div>}
-      <div className={classNames(styles.ksHotkeyExdKeyBindingContents)}>
-        <InputBinding {...data} />
-      </div>
-    </div>
+	<div className={classNames(styles.ksHotkeyExdKeyBinding)}>
+	  {hasIcon && <div className={classNames(styles.ksHotkeyExdKeyBindingIcon)}>
+		<img src={data.props.icon} />
+	  </div>}
+	  <div className={classNames(styles.ksHotkeyExdKeyBindingContents)}>
+		<InputBinding {...data} />
+	  </div>
+	</div>
   );
 }

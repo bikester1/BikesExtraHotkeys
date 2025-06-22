@@ -8,10 +8,10 @@ export const ExtendedBreadcumbs = (data: Widget<{ icon?: string }>) =>
 {
   const hasIcon = !!data.props.icon;
   return (
-    <div className={classNames(styles.ksHotkeyBreadcumbs)}>
-      {hasIcon && <div className={classNames(styles.ksHotkeyBreadcumbsIcon)}>
-              <img src={data.props.icon} />
-            </div>}
-    </div>
+	<div className={classNames(styles.ksHotkeyBreadcumbs)}>
+	  {hasIcon && <div className={classNames(styles.ksHotkeyBreadcumbsIcon)}>
+			  <img src={data.props.icon} />
+			</div>}
+	</div>
   );
 }

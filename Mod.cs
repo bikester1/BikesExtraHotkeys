@@ -14,53 +14,53 @@ using System.Reflection;
 
 namespace BikesExtraHotKey
 {
-    public class Hotkey : IMod
-    {
-        public static ModSettings ModSettings;
-        private LocalizationManager LocalizationManager => GameManager.instance.localizationManager;
-        private string modPath;
+	public class Hotkey : IMod
+	{
+		public static ModSettings ModSettings;
+		private LocalizationManager LocalizationManager => GameManager.instance.localizationManager;
+		private string modPath;
 
-        public static ILog Logger = LogManager.GetLogger($"{nameof(BikesExtraHotKey)}.{nameof(Hotkey)}").SetShowsErrorsInUI(false);
+		public static ILog Logger = LogManager.GetLogger($"{nameof(BikesExtraHotKey)}.{nameof(Hotkey)}").SetShowsErrorsInUI(false);
 
-        public void OnLoad(UpdateSystem updateSystem)
-        {
+		public void OnLoad(UpdateSystem updateSystem)
+		{
 
-            Logger.Info(nameof(OnLoad));
+			Logger.Info(nameof(OnLoad));
 
-            if (GameManager.instance.modManager.TryGetExecutableAsset(this, out var asset))
-            {
-                modPath = Path.GetDirectoryName(asset.path);
-                Logger.Info($"Current mod asset at {modPath}");
-            }
+			if (GameManager.instance.modManager.TryGetExecutableAsset(this, out var asset))
+			{
+				modPath = Path.GetDirectoryName(asset.path);
+				Logger.Info($"Current mod asset at {modPath}");
+			}
 
 
-            Localization.LoadLocalization(Assembly.GetExecutingAssembly());
+			Localization.LoadLocalization(Assembly.GetExecutingAssembly());
 
-            FileInfo fileInfo = new(asset.path);
-            Icons.LoadIconsFolder(Icons.IconsResourceKey, fileInfo.Directory.FullName);
+			FileInfo fileInfo = new(asset.path);
+			Icons.LoadIconsFolder(Icons.IconsResourceKey, fileInfo.Directory.FullName);
 
-            ModSettings = new ModSettings(this);
-            ModSettings.RegisterInOptionsUI();
-            ModSettings.RegisterKeyBindings();
-            AssetDatabase.global.LoadSettings(Global.Base, ModSettings, new ModSettings(this));
-            ModSettings.ApplyAndSave();
+			ModSettings = new ModSettings(this);
+			ModSettings.RegisterInOptionsUI();
+			ModSettings.RegisterKeyBindings();
+			AssetDatabase.global.LoadSettings(Global.Base, ModSettings, new ModSettings(this));
+			ModSettings.ApplyAndSave();
 
-            updateSystem.UpdateAt<UISystem>(SystemUpdatePhase.UIUpdate);
-        }
+			updateSystem.UpdateAt<UISystem>(SystemUpdatePhase.UIUpdate);
+		}
 
-        public void OnDispose()
-        {
-            Logger.Info($"{nameof(Hotkey)}.{nameof(OnDispose)}");
+		public void OnDispose()
+		{
+			Logger.Info($"{nameof(Hotkey)}.{nameof(OnDispose)}");
 
-            if (ModSettings != null)
-            {
-                ModSettings.UnregisterInOptionsUI();
-                ModSettings = null;
-            }
-            else
-            {
-                Logger.Info($"ModSettings is NULL");
-            }
-        }
-    }
+			if (ModSettings != null)
+			{
+				ModSettings.UnregisterInOptionsUI();
+				ModSettings = null;
+			}
+			else
+			{
+				Logger.Info($"ModSettings is NULL");
+			}
+		}
+	}
 }

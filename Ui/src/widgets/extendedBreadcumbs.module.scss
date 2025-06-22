@@ -3,5 +3,5 @@
 
 .ksHotkeyBreadcumbs
 {
-    @include                          flexbox(row, center, space-between);
+	@include                          flexbox(row, center, space-between);
 }

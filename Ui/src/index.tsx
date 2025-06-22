@@ -5,10 +5,10 @@ import { ExtendedKeybinding } from "widgets/extendedKeybinding";
 
 const register: ModRegistrar = (moduleRegistry) => {
 
-    // Vanilla OptionsUI component renderers ({"C# type": React widget renderer hook})
-    const widgetComponents: Record<string, (data: Widget<any>) => ReactElement> = moduleRegistry.get("game-ui/menu/widgets/option-widget-renderer.tsx", "optionsWidgetComponents");
-    // Add custom renderer for matching C# widget type
-    widgetComponents['BikesExtraHotKey.CustomOptionUIWidgets.Widgets+ExtendedKeybindingField']   = ExtendedKeybinding;
+	// Vanilla OptionsUI component renderers ({"C# type": React widget renderer hook})
+	const widgetComponents: Record<string, (data: Widget<any>) => ReactElement> = moduleRegistry.get("game-ui/menu/widgets/option-widget-renderer.tsx", "optionsWidgetComponents");
+	// Add custom renderer for matching C# widget type
+	widgetComponents['BikesExtraHotKey.CustomOptionUIWidgets.Widgets+ExtendedKeybindingField']   = ExtendedKeybinding;
 }
 
 export default register;
