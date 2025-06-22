@@ -37,7 +37,7 @@ namespace BikesExtraHotKey.Models.Tools
 
 			InitializeBindings();
 
-			Hotkey.Logger.Info($"{nameof(ToolModeManager)} initialized");
+			Hotkey.debugLogger.InfoWithLine($"{nameof(ToolModeManager)} initialized");
 		}
 
 		private void InitializeBindings()
@@ -103,7 +103,7 @@ namespace BikesExtraHotKey.Models.Tools
 			}
 			else
 			{
-				Hotkey.Logger.Warn($"Invalid mode name for NetToolSystem: {modeName}");
+				Hotkey.logger.Warn($"Invalid mode name for NetToolSystem: {modeName}");
 			}
 		}
 
@@ -116,7 +116,7 @@ namespace BikesExtraHotKey.Models.Tools
 			}
 			else
 			{
-				Hotkey.Logger.Warn($"Invalid mode name for ZoneToolSystem: {modeName}");
+				Hotkey.logger.Warn($"Invalid mode name for ZoneToolSystem: {modeName}");
 			}
 		}
 

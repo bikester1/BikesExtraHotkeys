@@ -1,4 +1,5 @@
 ﻿using BikesExtraHotKey.Constants;
+using BikesExtraHotKey.Debugger;
 using BikesExtraHotKey.Models.Helper;
 using BikesExtraHotKey.Models.Localization;
 using BikesExtraHotKey.Settings;
@@ -7,6 +8,7 @@ using Colossal.IO.AssetDatabase;
 using Colossal.Localization;
 using Colossal.Logging;
 using Game;
+using Game.City;
 using Game.Modding;
 using Game.SceneFlow;
 using System.IO;
@@ -20,17 +22,18 @@ namespace BikesExtraHotKey
 		private LocalizationManager LocalizationManager => GameManager.instance.localizationManager;
 		private string modPath;
 
-		public static ILog Logger = LogManager.GetLogger($"{nameof(BikesExtraHotKey)}.{nameof(Hotkey)}").SetShowsErrorsInUI(false);
+		public static ILog logger = LogManager.GetLogger($"{nameof(BikesExtraHotKey)}.{nameof(Hotkey)}").SetShowsErrorsInUI(false);
+		public static Logger debugLogger = new Logger(logger, true);
 
 		public void OnLoad(UpdateSystem updateSystem)
 		{
-
-			Logger.Info(nameof(OnLoad));
+			
+			debugLogger.InfoWithLine(nameof(OnLoad));
 
 			if (GameManager.instance.modManager.TryGetExecutableAsset(this, out var asset))
 			{
 				modPath = Path.GetDirectoryName(asset.path);
-				Logger.Info($"Current mod asset at {modPath}");
+                debugLogger.InfoWithLine($"Current mod asset at {modPath}");
 			}
 
 
@@ -50,7 +53,7 @@ namespace BikesExtraHotKey
 
 		public void OnDispose()
 		{
-			Logger.Info($"{nameof(Hotkey)}.{nameof(OnDispose)}");
+            debugLogger.InfoWithLine($"{nameof(Hotkey)}.{nameof(OnDispose)}");
 
 			if (ModSettings != null)
 			{
@@ -59,7 +62,7 @@ namespace BikesExtraHotKey
 			}
 			else
 			{
-				Logger.Info($"ModSettings is NULL");
+                debugLogger.InfoWithLine($"ModSettings is NULL");
 			}
 		}
 	}

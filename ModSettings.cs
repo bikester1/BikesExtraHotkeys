@@ -144,7 +144,7 @@ namespace BikesExtraHotKey.Settings
 		{
 			set
 			{
-				Hotkey.Logger.Info("ResetKey");
+				Hotkey.debugLogger.InfoWithLine("ResetKey");
 				ResetKeyBindings();
 			}
 		}
@@ -209,7 +209,7 @@ namespace BikesExtraHotKey.Settings
 			}
 			catch (Exception ex)
 			{
-				Hotkey.Logger.Error(ex.Message);
+				Hotkey.logger.Error(ex.Message);
 			}
 		}
 

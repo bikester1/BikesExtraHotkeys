@@ -24,7 +24,7 @@ namespace BikesExtraHotKey.Input
 			_modSettings = modSettings ?? throw new ArgumentNullException(nameof(modSettings));
 			m_CameraMap = _gameInputManager.FindActionMap("Camera");
 			m_IsInProgress = false;
-			Hotkey.Logger.Info($"{nameof(UIInputManager)} initialized");
+			Hotkey.debugLogger.InfoWithLine($"{nameof(UIInputManager)} initialized");
 		}
 
 		public ProxyAction GetAndEnableBinding(string settingName)
@@ -57,7 +57,7 @@ namespace BikesExtraHotKey.Input
 			}
 			catch (Exception ex)
 			{
-				Hotkey.Logger.Error($"Exception Error: {ex.Message}");
+				Hotkey.logger.Error($"Exception Error: {ex.Message}");
 				return false;
 			}
 		}
@@ -70,7 +70,7 @@ namespace BikesExtraHotKey.Input
 			}
 			catch (Exception ex)
 			{
-				Hotkey.Logger.Error($"Exception Error: {ex.Message}");
+				Hotkey.logger.Error($"Exception Error: {ex.Message}");
 				return false;
 			}
 		}
@@ -84,7 +84,7 @@ namespace BikesExtraHotKey.Input
 			}
 			catch (Exception ex)
 			{
-				Hotkey.Logger.Error($"Error in IsZoomingIn: {ex.Message}");
+				Hotkey.logger.Error($"Error in IsZoomingIn: {ex.Message}");
 				return false;
 			}
 		}
@@ -98,7 +98,7 @@ namespace BikesExtraHotKey.Input
 			}
 			catch (Exception ex)
 			{
-				Hotkey.Logger.Error($"Error in IsZoomingOut: {ex.Message}");
+				Hotkey.logger.Error($"Error in IsZoomingOut: {ex.Message}");
 				return false;
 			}
 		}

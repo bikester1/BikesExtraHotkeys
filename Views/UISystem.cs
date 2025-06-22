@@ -35,7 +35,7 @@ namespace BikesExtraHotKey.UiSystem
 		protected override void OnCreate()
 		{
 			base.OnCreate();
-			Hotkey.Logger.Info($"{nameof(UISystem)}.{nameof(OnCreate)}");
+			Hotkey.debugLogger.InfoWithLine($"{nameof(UISystem)}.{nameof(OnCreate)}");
 
 			try
 			{
@@ -43,7 +43,7 @@ namespace BikesExtraHotKey.UiSystem
 			}
 			catch (Exception ex)
 			{
-				Hotkey.Logger.Warn($"Exception: {ex.Message}");
+				Hotkey.logger.Warn($"Exception: {ex.Message}");
 			}
 		}
 
@@ -66,7 +66,7 @@ namespace BikesExtraHotKey.UiSystem
 			}
 			catch (Exception ex)
 			{
-				Hotkey.Logger.Warn($"Exception: {ex.Message}");
+				Hotkey.logger.Warn($"Exception: {ex.Message}");
 			}
 		}
 
@@ -125,7 +125,7 @@ namespace BikesExtraHotKey.UiSystem
 		protected override void OnDestroy()
 		{
 			base.OnDestroy();
-			Hotkey.Logger.Info($"{nameof(UISystem)}.{nameof(OnDestroy)}");
+			Hotkey.debugLogger.InfoWithLine($"{nameof(UISystem)}.{nameof(OnDestroy)}");
 		}
 	}
 }

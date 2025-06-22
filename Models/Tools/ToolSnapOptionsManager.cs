@@ -31,7 +31,7 @@ namespace BikesExtraHotKey.Models.Tools
 
 			InitializeBindings();
 
-			Hotkey.Logger.Info($"{nameof(ToolSnapOptionsManager)} initialized");
+			Hotkey.debugLogger.InfoWithLine($"{nameof(ToolSnapOptionsManager)} initialized");
 		}
 
 		private void InitializeBindings()

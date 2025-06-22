@@ -1,6 +1,9 @@
 ﻿using Colossal.Logging;
 using System.Diagnostics;
+using System.IO;
 using System.Reflection;
+using System.Runtime.CompilerServices;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BikesExtraHotKey.Debugger
 {
@@ -23,6 +26,11 @@ namespace BikesExtraHotKey.Debugger
 				UnityEngine.Debug.Log($"[{caller.DeclaringType} : {caller.Name}] {LogMessage}");
 			}
 			logger.Info(LogMessage);
+		}
+
+		public void InfoWithLine(object LogMessage, [CallerFilePath] string file = "", [CallerMemberName] string member = "", [CallerLineNumber] int line = 0)
+		{
+			Info($"{Path.GetFileName(file)}_{member}({line}): {LogMessage}");
 		}
 
 		public void Warn(object LogMessage)

@@ -33,7 +33,7 @@ namespace BikesExtraHotKey.Models.Tools
 			_brushManager = new BrushManager(modSettings, uiInputManager, m_terrainToolSystem, m_objectToolSystem, m_toolSystem);
 			_elevationManager = new ElevationManager(modSettings, uiInputManager, m_netToolSystem);
 
-			Hotkey.Logger.Info($"{nameof(ScrollActionManager)} initialized");
+			Hotkey.debugLogger.InfoWithLine($"{nameof(ScrollActionManager)} initialized");
 		}
 
 		public void CheckScrollWheelActions()

@@ -14,13 +14,13 @@ namespace BikesExtraHotKey.Models.Localization
 		public static void LoadLocalization(Assembly assembly, string namespaceName = null, string defaultLocalID = "en-US")
 		{
 			namespaceName ??= assembly.GetName().Name;
-			Hotkey.Logger.Info("Start loading the localization.");
+			Hotkey.debugLogger.InfoWithLine("Start loading the localization.");
 			try
 			{
-				Hotkey.Logger.Info("Loading multiple Localization file");
+				Hotkey.debugLogger.InfoWithLine("Loading multiple Localization file");
 				foreach (string localeID in GameManager.instance.localizationManager.GetSupportedLocales())
 				{
-					Hotkey.Logger.Info($"Loading {localeID}");
+					Hotkey.debugLogger.InfoWithLine($"Loading {localeID}");
 					Dictionary<string, string> localization;
 
 					if (assembly.GetManifestResourceNames().Contains($"{namespaceName}.Localization.{localeID}.json"))
@@ -28,18 +28,18 @@ namespace BikesExtraHotKey.Models.Localization
 					else if (assembly.GetManifestResourceNames().Contains($"{namespaceName}.Localization.{defaultLocalID}.json"))
 					{
 						localization = Decoder.Decode(new StreamReader(assembly.GetManifestResourceStream($"{namespaceName}.Localization.{defaultLocalID}.json")).ReadToEnd()).Make<Dictionary<string, string>>();
-						Hotkey.Logger.Warn($"No {localeID} in the files, using {defaultLocalID} instead.");
+						Hotkey.logger.Warn($"No {localeID} in the files, using {defaultLocalID} instead.");
 					}
 					else
 					{
-						Hotkey.Logger.Error($"No {localeID} in the files, and no {defaultLocalID}. This maybe due of an assembly name different from the namespace name.");
+						Hotkey.logger.Error($"No {localeID} in the files, and no {defaultLocalID}. This maybe due of an assembly name different from the namespace name.");
 						continue;
 					}
 
 					GameManager.instance.localizationManager.AddSource(localeID, new MemorySource(localization));
 				}
 			}
-			catch (Exception ex) { Hotkey.Logger.Error(ex); }
+			catch (Exception ex) { Hotkey.logger.Error(ex); }
 		}
 	}
 }

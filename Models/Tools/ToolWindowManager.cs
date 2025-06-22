@@ -30,7 +30,7 @@ namespace BikesExtraHotKey.Models.Tools
 			_prefabSystem = m_prefabSystem;
 			_openToolWindowsBindings = new List<(ProxyAction, string)>();
 
-			Hotkey.Logger.Info($"{nameof(ToolWindowManager)} initialized");
+			Hotkey.debugLogger.InfoWithLine($"{nameof(ToolWindowManager)} initialized");
 		}
 
 		private void RegisterKeybinding(string settingName, string toolName)
@@ -70,7 +70,7 @@ namespace BikesExtraHotKey.Models.Tools
 
 			if (menuEntity == Entity.Null)
 			{
-				Hotkey.Logger.Error($"Could not find menu entity for {toolName}");
+				Hotkey.logger.Error($"Could not find menu entity for {toolName}");
 			}
 
 			return new

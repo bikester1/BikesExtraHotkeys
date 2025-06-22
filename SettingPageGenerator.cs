@@ -125,7 +125,7 @@ namespace BikesExtraHotKey.Settings
 
 							settingItemData = GetSettingsItemData(customWidgetType, setting, property, pageData.prefix);
 
-							Hotkey.Logger.Info("BikeHotKey Init " + property);
+							Hotkey.debugLogger.InfoWithLine("BikeHotKey Init " + property);
 
 							#endregion
 						}
