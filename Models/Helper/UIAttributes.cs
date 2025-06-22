@@ -1,11 +1,10 @@
-﻿using System;
-using Game.Input;
+﻿using Game.Input;
 using Game.Settings;
-using BikesExtraHotKey.Models.Tools;
+using System;
 
 namespace BikesExtraHotKey.Models.Ui
 {
-        public static class UIAttributes
+    public static class UIAttributes
     {
         [AttributeUsage(AttributeTargets.Property)]
         public class CustomUIExtendedKeybindingAttribute : SettingsUIKeyboardBindingAttribute

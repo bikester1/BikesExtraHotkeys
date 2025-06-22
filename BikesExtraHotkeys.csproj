@@ -5,8 +5,8 @@
 
 		<PublishConfigurationPath>Properties\PublishConfiguration.xml</PublishConfigurationPath>
 		<Title>Bikes Extra Hotkeys</Title>
-		<Version>2.1.2</Version>
-		<AssemblyVersion>2.1.2</AssemblyVersion>
+		<Version>2.1.4</Version>
+		<AssemblyVersion>2.1.4</AssemblyVersion>
 		<Description>This mod adds extra hotkeys to the game that should have been there by default.</Description>
 	</PropertyGroup>
 
@@ -85,8 +85,8 @@
 	<ItemGroup>
 		<None Include="$(ModPropsFile)" Link="Properties\Mod.props" />
 		<None Include="$(ModTargetsFile)" Link="Properties\Mod.targets" />
-		<!--<<None Include="Properties\PublishProfiles\PublishNewMod.pubxml.user" /> />-->
-		<!--<<None Include="Properties\PublishProfiles\PublishNewVersion.pubxml.user" /> />-->
+		<None Include="Properties\PublishProfiles\PublishNewMod.pubxml.user" />
+		<None Include="Properties\PublishProfiles\PublishNewVersion.pubxml.user" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -97,6 +97,8 @@
 		<EmbeddedResource Include="Localization\*.*" />
 	</ItemGroup>
 	
+	<ProjectExtensions><VisualStudio><UserProperties localization_4en-us_1json__JsonSchema="https://alec016.github.io/Custom-Machinery/Json%20Schema/src/main/resources/schemas/custom_machinery_recipe.json" /></VisualStudio></ProjectExtensions>
+
 
 	<Target Name="GetAdditionalFiles" AfterTargets="DeployWIP">
 		<ItemGroup>
@@ -115,7 +117,6 @@
 		<None Remove=".gitattributes" />
 		<None Remove=".gitignore" />
 		<None Remove="ExtraHotkeys.sln.DotSettings" />
-		<None Remove="BikesExtraHotKeys.csproj.DotSettings" />
 		<None Remove="LICENSE" />
 		<None Remove="README.md" />
 	</ItemGroup>

@@ -3,62 +3,63 @@
 	<DisplayName Value="[Bikes] Extra Hotkeys" />
 	<ShortDescription Value="This mod adds extra hotkeys to the game that should have been there by default." />
 	<LongDescription>
-Extra Hotkeys is a powerful quality-of-life mod for Cities: Skylines 2, designed to enhance your gameplay experience by introducing additional hotkeys and intuitive controls that should have been there from the start.
+		Extra Hotkeys is a powerful quality-of-life mod for Cities: Skylines 2, designed to enhance your gameplay experience by introducing additional hotkeys and intuitive controls that should have been there from the start.
 
-## 🔥 Features
+		## 🔥 Features
 
-✅ Customizable Hotkeys – Assign hotkeys to open various tool windows, such as roads, zoning, and more.
+		✅ Customizable Hotkeys – Assign hotkeys to open various tool windows, such as roads, zoning, and more.
 
-✅ Enhanced Tool Selection – Quickly switch between different tool modes and snapping options with dedicated hotkeys.
+		✅ Enhanced Tool Selection – Quickly switch between different tool modes and snapping options with dedicated hotkeys.
 
-✅ Scroll Wheel Enhancements – Use the scroll wheel to adjust road elevation, brush size, terrain strength, and other tool parameters effortlessly.
+		✅ Scroll Wheel Enhancements – Use the scroll wheel to adjust road elevation, brush size, terrain strength, and other tool parameters effortlessly.
 
-✅ Fully Customizable – All hotkeys and scroll wheel options can be configured in the game's settings menu.
+		✅ Fully Customizable – All hotkeys and scroll wheel options can be configured in the game's settings menu.
 
-✅ Brush Size – From 1 to 50,000.
+		✅ Brush Size – From 1 to 50,000.
 
-## 🎮 Installation and Setup
+		## 🎮 Installation and Setup
 
-- Download the mod from Paradox Mods, or the in-game mod browser.
-- Open the Options Menu in Cities: Skylines 2.
-- Navigate to the "Extra Hotkeys" tab.
-- Customize hotkeys to match your play style.
-- Visit the "Others" tab to enable scroll wheel support and fine-tune additional settings. Each setting includes a description to help you understand its functionality.
+		- Download the mod from Paradox Mods, or the in-game mod browser.
+		- Open the Options Menu in Cities: Skylines 2.
+		- Navigate to the "Extra Hotkeys" tab.
+		- Customize hotkeys to match your play style.
+		- Visit the "Others" tab to enable scroll wheel support and fine-tune additional settings. Each setting includes a description to help you understand its functionality.
 
-## 🔧 Upcoming Features
+		## 🔧 Upcoming Features
 
-🚀 Multilingual Support – Currently available in English, with more languages coming soon!
+		🚀 Multilingual Support – Currently available in English, with more languages coming soon!
 
-🚀 More Hotkeys – Have suggestions? Let us know and help shape future updates!
+		🚀 More Hotkeys – Have suggestions? Let us know and help shape future updates!
 
-## 👑 Credits
+		## 👑 Credits
 
-💡 Original Mod by Fenrir
-💡 Updated by kelvinspaces
+		💡 Original Mod by Fenrir
+		💡 Updated by kelvinspaces
+		💡 Updated again by bikester1
 
-## Special Thanks
-- [Yenyang](https://mods.paradoxplaza.com/authors/yenyang)
-- [Triton](https://mods.paradoxplaza.com/authors/Triton%20Supreme)
-- [Krzychu124](https://mods.paradoxplaza.com/authors/krzychu124)
+		## Special Thanks
+		- [Yenyang](https://mods.paradoxplaza.com/authors/yenyang)
+		- [Triton](https://mods.paradoxplaza.com/authors/Triton%20Supreme)
+		- [Krzychu124](https://mods.paradoxplaza.com/authors/krzychu124)
 
-## Translation
-- ✔️ English
-- ✔️ Chinese Simplified
-- ✔️ Chinese Traditional
-- ✔️ Spanish - [elGendo87](https://mods.paradoxplaza.com/authors/elGendo87)
-- ✔️ France - [gagaXm](https://mods.paradoxplaza.com/authors/gagaXm)
-- ❌ German - ChatGPT
-- ❌ Italian - ChatGPT
-- ❌ Japanese - ChatGPT
-- ❌ Korean - ChatGPT
-- ❌ Brazilian Portuguese - ChatGPT
-- ❌ Polish - ChatGPT
-- ❌ Brazilian Portuguese - ChatGPT
-- ❌ European Portuguese - ChatGPT
-- ❌ Russian - ChatGPT
+		## Translation
+		- ✔️ English
+		- ✔️ Chinese Simplified
+		- ✔️ Chinese Traditional
+		- ✔️ Spanish - [elGendo87](https://mods.paradoxplaza.com/authors/elGendo87)
+		- ✔️ France - [gagaXm](https://mods.paradoxplaza.com/authors/gagaXm)
+		- ❌ German - ChatGPT
+		- ❌ Italian - ChatGPT
+		- ❌ Japanese - ChatGPT
+		- ❌ Korean - ChatGPT
+		- ❌ Brazilian Portuguese - ChatGPT
+		- ❌ Polish - ChatGPT
+		- ❌ Brazilian Portuguese - ChatGPT
+		- ❌ European Portuguese - ChatGPT
+		- ❌ Russian - ChatGPT
 
 
-Take your Cities: Skylines 2 experience to the next level with ExtraHotkeys! 🚀
+		Take your Cities: Skylines 2 experience to the next level with ExtraHotkeys! 🚀
 	</LongDescription>
 	<Thumbnail Value="Properties/Thumbnail.png" />
 	<Screenshot Value="Properties/screenshot-1.png" />
@@ -66,7 +67,7 @@ Take your Cities: Skylines 2 experience to the next level with ExtraHotkeys! �
 	<Screenshot Value="Properties/screenshot-3.png" />
 	<Screenshot Value="Properties/screenshot-4.png" />
 	<Tag Value="Code Mod" />
-	<ModVersion Value="2.1.3" />
+	<ModVersion Value="2.1.4" />
 	<GameVersion Value="1.3.*" />
 	<ChangeLog>
 # 2.1.3

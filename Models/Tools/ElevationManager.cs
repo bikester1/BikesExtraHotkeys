@@ -1,9 +1,9 @@
-﻿using cohtml.Net;
+﻿using BikesExtraHotKey.Input;
+using BikesExtraHotKey.Settings;
+using cohtml.Net;
 using Game.SceneFlow;
 using Game.Tools;
-using BikesExtraHotKey.Input;
 using System;
-using BikesExtraHotKey.Settings;
 
 namespace BikesExtraHotKey.Models.Tools
 {

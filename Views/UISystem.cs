@@ -1,15 +1,13 @@
-﻿using cohtml.Net;
+﻿using BikesExtraHotKey.Input;
+using BikesExtraHotKey.Models.Tools;
+using BikesExtraHotKey.Settings;
+using cohtml.Net;
 using Game.Input;
 using Game.Prefabs;
 using Game.SceneFlow;
 using Game.Tools;
 using Game.UI;
-using Game.UI.InGame;
 using System;
-using BikesExtraHotKey;
-using BikesExtraHotKey.Settings;
-using BikesExtraHotKey.Input;
-using BikesExtraHotKey.Models.Tools;
 
 namespace BikesExtraHotKey.UiSystem
 {

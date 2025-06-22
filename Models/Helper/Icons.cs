@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Colossal.UI;
+﻿using Colossal.UI;
+using System.Collections.Generic;
 
 namespace BikesExtraHotKey.Models.Helper
 {
@@ -19,7 +19,7 @@ namespace BikesExtraHotKey.Models.Helper
             }
             else
             {
-                pathToIconLoaded.Add(uri, new List<string>{ path });
+                pathToIconLoaded.Add(uri, new List<string> { path });
             }
 
             UIManager.defaultUISystem.AddHostLocation(uri, path, shouldWatch);

@@ -1,8 +1,6 @@
-﻿using Game.Tools;
+﻿using BikesExtraHotKey.Input;
 using BikesExtraHotKey.Settings;
-using BikesExtraHotKey;
-using BikesExtraHotKey.Input;
-using BikesExtraHotKey.Models.Tools;
+using Game.Tools;
 
 namespace BikesExtraHotKey.Models.Tools
 {

@@ -2,8 +2,8 @@
 {
     public class Global
     {
-        public const string Base                    = "BikesExtraHotKey";
+        public const string Base = "BikesExtraHotKey";
 
-        public const string Settings                = Base + ".coc";
+        public const string Settings = Base + ".coc";
     }
 }

@@ -1,13 +1,13 @@
-﻿using Colossal.IO.AssetDatabase;
+﻿using BikesExtraHotKey.Constants;
+using BikesExtraHotKey.Models.Ui;
+using Colossal.IO.AssetDatabase;
 using Game.Input;
 using Game.Modding;
 using Game.Settings;
 using Game.UI.Menu;
-using System.Linq;
 using System;
+using System.Linq;
 using System.Reflection;
-using BikesExtraHotKey.Models.Ui;
-using BikesExtraHotKey.Constants;
 
 namespace BikesExtraHotKey.Settings
 {
@@ -19,21 +19,21 @@ namespace BikesExtraHotKey.Settings
     {
         #region Sections
 
-        public const string sToolKeybindings            = "ToolKeybindings";
-        public const string sGeneral                    = "General";
+        public const string sToolKeybindings = "ToolKeybindings";
+        public const string sGeneral = "General";
 
         #endregion
 
         #region Group Names
 
-        public const string gOpenToolsKeybindings       = "OpenTools";
-        public const string gRoadToolModeKeybindings    = "ToolModesRoads";
-        public const string gZonesToolModeKeybindings   = "ToolModesZones";
-        public const string gSnappingKeybindings        = "SnappingOptions";
+        public const string gOpenToolsKeybindings = "OpenTools";
+        public const string gRoadToolModeKeybindings = "ToolModesRoads";
+        public const string gZonesToolModeKeybindings = "ToolModesZones";
+        public const string gSnappingKeybindings = "SnappingOptions";
 
-        public const string gGeneral                    = "General";
-        public const string gToolRelated                = "ToolRelated";
-        public const string gAbout                      = "About";
+        public const string gGeneral = "General";
+        public const string gToolRelated = "ToolRelated";
+        public const string gAbout = "About";
 
         #endregion
 
@@ -41,7 +41,7 @@ namespace BikesExtraHotKey.Settings
         {
         }
 
-        
+
 
         #region Hidden Settings
 

@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
+﻿using BikesExtraHotKey.CustomOptionUIWidgets;
+using BikesExtraHotKey.Models.Ui;
 using Colossal.Reflection;
-using BikesExtraHotKey.CustomOptionUIWidgets;
 using Game.Settings;
 using Game.UI.Menu;
 using Game.UI.Widgets;
-using BikesExtraHotKey;
-using BikesExtraHotKey.Models.Ui;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Reflection;
 
 namespace BikesExtraHotKey.Settings
 {

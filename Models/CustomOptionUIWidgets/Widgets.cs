@@ -1,10 +1,10 @@
-﻿using System;
-using System.Reflection;
-using Colossal.UI.Binding;
+﻿using Colossal.UI.Binding;
 using Game.Input;
 using Game.Reflection;
 using Game.UI.Menu;
 using Game.UI.Widgets;
+using System;
+using System.Reflection;
 
 namespace BikesExtraHotKey.CustomOptionUIWidgets
 {
@@ -26,7 +26,8 @@ namespace BikesExtraHotKey.CustomOptionUIWidgets
                 displayNameAction = itemData.dispayNameAction;
                 descriptionAction = itemData.descriptionAction;
                 Action<ProxyBinding> setterAction = itemData.setterAction as Action<ProxyBinding>;
-                accessor = (ITypedValueAccessor<ProxyBinding>)new DelegateAccessor<ProxyBinding>((Func<ProxyBinding>)(() => {
+                accessor = (ITypedValueAccessor<ProxyBinding>)new DelegateAccessor<ProxyBinding>((Func<ProxyBinding>)(() =>
+                {
                     ProxyBinding binding = (ProxyBinding)itemData.property.GetValue((object)itemData.setting);
                     var watcher = (ProxyBinding.Watcher)typeof(InputManager).GetMethod("GetOrCreateBindingWatcher", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(InputManager.instance, new object[] { binding });
                     ProxyBinding binding2 = watcher.binding;
@@ -37,7 +38,8 @@ namespace BikesExtraHotKey.CustomOptionUIWidgets
                         fieldInfo.SetValue(binding2, originalAlias);
                     }
                     return binding2;
-                }), (Action<ProxyBinding>)(value => {
+                }), (Action<ProxyBinding>)(value =>
+                {
                     ProxyBinding result;
                     if (!InputManager.instance.SetBinding(value, out result))
                         return;

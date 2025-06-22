@@ -1,11 +1,10 @@
-﻿using cohtml.Net;
+﻿using BikesExtraHotKey.Input;
+using BikesExtraHotKey.Settings;
+using cohtml.Net;
 using Game.Input;
 using Game.Tools;
 using System;
 using System.Collections.Generic;
-using BikesExtraHotKey.Settings;
-using BikesExtraHotKey;
-using BikesExtraHotKey.Input;
 
 namespace BikesExtraHotKey.Models.Tools
 {
