@@ -11,8 +11,13 @@ using Game;
 using Game.City;
 using Game.Modding;
 using Game.SceneFlow;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 
 namespace BikesExtraHotKey
 {
@@ -21,14 +26,20 @@ namespace BikesExtraHotKey
 		public static ModSettings ModSettings;
 		private LocalizationManager LocalizationManager => GameManager.instance.localizationManager;
 		private string modPath;
+		private static List<(LogLevel, object)> LogQueue = new List<(LogLevel, object)>();
 
-		public static ILog logger = LogManager.GetLogger($"{nameof(BikesExtraHotKey)}.{nameof(Hotkey)}").SetShowsErrorsInUI(false);
-		public static Logger debugLogger = new Logger(logger, true);
+		private static ILog logger;
+		public static HotKeyLogger debugLogger = new HotKeyLogger();
+		public static bool Initialized = false;
+
 
 		public void OnLoad(UpdateSystem updateSystem)
 		{
-			
-			debugLogger.InfoWithLine(nameof(OnLoad));
+
+            logger = LogManager.GetLogger($"{nameof(BikesExtraHotKey)}.{nameof(Hotkey)}").SetShowsErrorsInUI(false);
+			debugLogger.InitializeLogger(logger);
+
+            debugLogger.InfoWithLine(nameof(OnLoad));
 
 			if (GameManager.instance.modManager.TryGetExecutableAsset(this, out var asset))
 			{
@@ -49,6 +60,8 @@ namespace BikesExtraHotKey
 			ModSettings.ApplyAndSave();
 
 			updateSystem.UpdateAt<UISystem>(SystemUpdatePhase.UIUpdate);
+
+			Initialized = true;
 		}
 
 		public void OnDispose()
@@ -65,5 +78,8 @@ namespace BikesExtraHotKey
                 debugLogger.InfoWithLine($"ModSettings is NULL");
 			}
 		}
-	}
+
+    }
+
+
 }

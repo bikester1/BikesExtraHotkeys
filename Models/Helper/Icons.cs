@@ -6,7 +6,7 @@ namespace BikesExtraHotKey.Models.Helper
 	public static class Icons
 	{
 		private static readonly Dictionary<string, List<string>> pathToIconLoaded = new Dictionary<string, List<string>>();
-		internal static readonly string IconsResourceKey = "kelvinspaces-hotkey";
+		internal static readonly string IconsResourceKey = "bikester1-hotkey";
 		internal static readonly string COUIBaseLocation = $"coui://{IconsResourceKey}";
 
 		public static void LoadIconsFolder(string uri, string path, bool shouldWatch = false)

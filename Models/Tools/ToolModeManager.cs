@@ -103,7 +103,7 @@ namespace BikesExtraHotKey.Models.Tools
 			}
 			else
 			{
-				Hotkey.logger.Warn($"Invalid mode name for NetToolSystem: {modeName}");
+				Hotkey.debugLogger.Warn($"Invalid mode name for NetToolSystem: {modeName}");
 			}
 		}
 
@@ -116,7 +116,7 @@ namespace BikesExtraHotKey.Models.Tools
 			}
 			else
 			{
-				Hotkey.logger.Warn($"Invalid mode name for ZoneToolSystem: {modeName}");
+				Hotkey.debugLogger.Warn($"Invalid mode name for ZoneToolSystem: {modeName}");
 			}
 		}
 

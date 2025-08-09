@@ -57,7 +57,7 @@ namespace BikesExtraHotKey.Input
 			}
 			catch (Exception ex)
 			{
-				Hotkey.logger.Error($"Exception Error: {ex.Message}");
+				Hotkey.debugLogger.Error($"Exception Error: {ex.Message}");
 				return false;
 			}
 		}
@@ -70,7 +70,7 @@ namespace BikesExtraHotKey.Input
 			}
 			catch (Exception ex)
 			{
-				Hotkey.logger.Error($"Exception Error: {ex.Message}");
+				Hotkey.debugLogger.Error($"Exception Error: {ex.Message}");
 				return false;
 			}
 		}
@@ -84,7 +84,7 @@ namespace BikesExtraHotKey.Input
 			}
 			catch (Exception ex)
 			{
-				Hotkey.logger.Error($"Error in IsZoomingIn: {ex.Message}");
+				Hotkey.debugLogger.Error($"Error in IsZoomingIn: {ex.Message}");
 				return false;
 			}
 		}
@@ -98,7 +98,7 @@ namespace BikesExtraHotKey.Input
 			}
 			catch (Exception ex)
 			{
-				Hotkey.logger.Error($"Error in IsZoomingOut: {ex.Message}");
+				Hotkey.debugLogger.Error($"Error in IsZoomingOut: {ex.Message}");
 				return false;
 			}
 		}

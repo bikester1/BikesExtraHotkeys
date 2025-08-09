@@ -70,7 +70,7 @@ namespace BikesExtraHotKey.Models.Tools
 
 			if (menuEntity == Entity.Null)
 			{
-				Hotkey.logger.Error($"Could not find menu entity for {toolName}");
+				Hotkey.debugLogger.Error($"Could not find menu entity for {toolName}");
 			}
 
 			return new

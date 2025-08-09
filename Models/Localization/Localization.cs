@@ -28,18 +28,18 @@ namespace BikesExtraHotKey.Models.Localization
 					else if (assembly.GetManifestResourceNames().Contains($"{namespaceName}.Localization.{defaultLocalID}.json"))
 					{
 						localization = Decoder.Decode(new StreamReader(assembly.GetManifestResourceStream($"{namespaceName}.Localization.{defaultLocalID}.json")).ReadToEnd()).Make<Dictionary<string, string>>();
-						Hotkey.logger.Warn($"No {localeID} in the files, using {defaultLocalID} instead.");
+						Hotkey.debugLogger.Warn($"No {localeID} in the files, using {defaultLocalID} instead.");
 					}
 					else
 					{
-						Hotkey.logger.Error($"No {localeID} in the files, and no {defaultLocalID}. This maybe due of an assembly name different from the namespace name.");
+						Hotkey.debugLogger.Error($"No {localeID} in the files, and no {defaultLocalID}. This maybe due of an assembly name different from the namespace name.");
 						continue;
 					}
 
 					GameManager.instance.localizationManager.AddSource(localeID, new MemorySource(localization));
 				}
 			}
-			catch (Exception ex) { Hotkey.logger.Error(ex); }
+			catch (Exception ex) { Hotkey.debugLogger.Error(ex); }
 		}
 	}
 }

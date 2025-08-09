@@ -37,14 +37,16 @@ namespace BikesExtraHotKey.UiSystem
 			base.OnCreate();
 			Hotkey.debugLogger.InfoWithLine($"{nameof(UISystem)}.{nameof(OnCreate)}");
 
-			try
-			{
-				Initialize();
-			}
-			catch (Exception ex)
-			{
-				Hotkey.logger.Warn($"Exception: {ex.Message}");
-			}
+
+				try
+				{
+					Console.WriteLine("Initializing UI");
+					Initialize();
+				}
+				catch (Exception ex)
+				{
+					Hotkey.debugLogger.Warn($"Exception: {ex.Message}");
+				}
 		}
 
 		protected override void OnUpdate()
@@ -66,7 +68,7 @@ namespace BikesExtraHotKey.UiSystem
 			}
 			catch (Exception ex)
 			{
-				Hotkey.logger.Warn($"Exception: {ex.Message}");
+				Hotkey.debugLogger.Warn($"Exception: {ex.Message}");
 			}
 		}
 

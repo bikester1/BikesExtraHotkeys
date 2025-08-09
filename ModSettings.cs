@@ -209,7 +209,7 @@ namespace BikesExtraHotKey.Settings
 			}
 			catch (Exception ex)
 			{
-				Hotkey.logger.Error(ex.Message);
+				Hotkey.debugLogger.Error(ex.Message);
 			}
 		}
 
