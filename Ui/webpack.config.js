@@ -89,7 +89,7 @@ module.exports = {
 	library: {
 	  type: "module",
 	},
-	publicPath: `coui://kelvinspaces-hotkey/`,
+	publicPath: `coui://bikester1-hotkey/`,
   },
   optimization: {
 	minimize: true,

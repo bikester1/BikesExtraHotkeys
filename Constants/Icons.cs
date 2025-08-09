@@ -2,7 +2,7 @@
 {
 	public class IconPath
 	{
-		public const string BasePath = "coui://kelvinspaces-hotkey/Assets/Icons/";
+		public const string BasePath = "coui://bikester1-hotkey/Assets/Icons/";
 
 		public const string Road = BasePath + "Roads.svg";
 		public const string Zones = BasePath + "Zones.svg";
