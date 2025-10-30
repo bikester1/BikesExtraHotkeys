@@ -5,8 +5,8 @@
 
 		<PublishConfigurationPath>Properties\PublishConfiguration.xml</PublishConfigurationPath>
 		<Title>Bikes Extra HotKeys</Title>
-		<Version>2.1.7</Version>
-		<AssemblyVersion>2.1.7</AssemblyVersion>
+		<Version>2.1.8</Version>
+		<AssemblyVersion>2.1.8</AssemblyVersion>
 		<Description>This mod adds extra hotkeys to the game that should have been there by default.</Description>
 	</PropertyGroup>
 
