@@ -1,0 +1,5 @@
+file_path,pattern,display_name
+BikesExtraHotkeys.csproj,<Version>(\d*.\d*.\d*)</Version>,csproj version 1
+BikesExtraHotkeys.csproj,<AssemblyVersion>(\d*.\d*.\d*)</AssemblyVersion>,csproj version 2
+Properties\PublishConfiguration.xml,<ModVersion\s*Value\s*=\s*\"(\d*.\d*.\d*)\"\s*/>, publishconfig version
+Ui\mod.json,\"version\":\s*\"(\d*.\d*.\d*)\",mod.json version
