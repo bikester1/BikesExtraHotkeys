@@ -89,7 +89,7 @@ module.exports = {
 	library: {
 	  type: "module",
 	},
-	publicPath: `coui://bikester1-hotkey/`,
+	  publicPath: `coui://ui-mods/`,
   },
   optimization: {
 	minimize: true,

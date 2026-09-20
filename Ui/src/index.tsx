@@ -2,13 +2,14 @@ import { ReactElement } from "react";
 import { Widget } from "cs2/bindings";
 import { ModRegistrar } from "cs2/modding";
 import { ExtendedKeybinding } from "widgets/extendedKeybinding";
+import mod from "../mod.json";
 
 const register: ModRegistrar = (moduleRegistry) => {
 	console.log("Mod Registrar extrahotkeys");
 	// Vanilla OptionsUI component renderers ({"C# type": React widget renderer hook})
 	const widgetComponents: Record<string, (data: Widget<any>) => ReactElement> = moduleRegistry.get("game-ui/menu/widgets/option-widget-renderer.tsx", "optionsWidgetComponents");
 	// Add custom renderer for matching C# widget type
-	widgetComponents['BikesExtraHotKey.CustomOptionUIWidgets.Widgets+ExtendedKeybindingField']   = ExtendedKeybinding;
+	widgetComponents['BikesExtraHotKey.CustomOptionUIWidgets.Widgets+ExtendedKeybindingField'] = ExtendedKeybinding;
 }
 
 export default register;

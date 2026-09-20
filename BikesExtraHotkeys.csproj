@@ -5,17 +5,19 @@
 
 		<PublishConfigurationPath>Properties\PublishConfiguration.xml</PublishConfigurationPath>
 		<Title>Bikes Extra HotKeys</Title>
-		<Version>2.2.0</Version>
-		<AssemblyVersion>2.2.0</AssemblyVersion>
+		<Version>2.2.8</Version>
+		<AssemblyVersion>2.2.8</AssemblyVersion>
 		<Description>This mod adds extra hotkeys to the game that should have been there by default.</Description>
 	</PropertyGroup>
 
 	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.props" />
 	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.targets" />
 
-	<Target Name="BuildUI" AfterTargets="AfterBuild">
+  <!--
+	<Target Name="BuildUI" AfterTargets="AfterBuild" BeforeTargets="Publish">
 		<Exec Command="npm run build" WorkingDirectory="$(ProjectDir)/Ui" />
 	</Target>
+  -->
 
 	<ItemGroup>
 		<!--<Reference Include="$(CustomManagedPath)\Newtonsoft.Json.dll" Private="False" />-->
@@ -89,7 +91,11 @@
 		<None Include="Properties\PublishProfiles\PublishNewVersion.pubxml.user" />-->
 	</ItemGroup>
 
-	<ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\" />
+  </ItemGroup>
+
+  <ItemGroup>
 	  <Folder Include="Properties\Screenshots\" />
 	</ItemGroup>
 
@@ -97,8 +103,11 @@
 		<EmbeddedResource Include="Localization\*.*" />
 	</ItemGroup>
 	
-	<ProjectExtensions><VisualStudio><UserProperties localization_4en-us_1json__JsonSchema="https://alec016.github.io/Custom-Machinery/Json%20Schema/src/main/resources/schemas/custom_machinery_recipe.json" /></VisualStudio></ProjectExtensions>
-
+	<!--<ProjectExtensions><VisualStudio><UserProperties localization_4en-us_1json__JsonSchema="https://alec016.github.io/Custom-Machinery/Json%20Schema/src/main/resources/schemas/custom_machinery_recipe.json" /></VisualStudio></ProjectExtensions>-->
+  
+  <Target Name="BuildUI" AfterTargets="AfterBuild">
+    <Exec Command="npm run build" WorkingDirectory="$(ProjectDir)/Ui" />
+  </Target>
 
 	<Target Name="GetAdditionalFiles" AfterTargets="DeployWIP">
 		<ItemGroup>

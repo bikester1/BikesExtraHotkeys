@@ -67,14 +67,11 @@ Take your Cities: Skylines 2 experience to the next level with ExtraHotkeys! ðŸš
 	<Screenshot Value="Properties/screenshot-3.png" />
 	<Screenshot Value="Properties/screenshot-4.png" />
 	<Tag Value="Code Mod" />
-	<ModVersion Value="2.2.0" />
-	<GameVersion Value="1.5.*" />
+	<ModVersion Value="2.2.8" />
+	<GameVersion Value="1.6.*" />
 	<ChangeLog>
-# 2.1.9
-- Added version update python script to make bumping version numbers easier.
-
-# 2.2.0
-- Compiled against 1.5.2f
+# 2.2.8
+- Recompiled for version 1.6.2f1.
   </ChangeLog>
 
 	<ExternalLink Type="github" Url="https://github.com/bikester1/BikesExtraHotkeys" />
