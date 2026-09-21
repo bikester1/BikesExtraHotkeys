@@ -24,6 +24,8 @@
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushSizeScroll]": "Ctrl + マウスホイールで地形ツールのブラシサイズを調整可能にする",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushStrengthScroll]": "ブラシ強度スクロールを有効化",
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushStrengthScroll]": "Alt + マウスホイールで地形ツールのブラシ強度を調整可能にする",
+  "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableAreaBulldozerBrushScroll]": "Enable Area Bulldozer brush scroll",
+  "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableAreaBulldozerBrushScroll]": "Enable Ctrl + Scroll Wheel to resize the Area Bulldozer selection brush. Only active while the Area Bulldozer tool is selected.",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.RoadStraight]": "直線",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey/RoadStraight/binding]": "直線",
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.RoadStraight]": "ゾーンツールモードを塗りつぶしに設定",

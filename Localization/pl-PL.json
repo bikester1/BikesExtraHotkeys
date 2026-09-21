@@ -24,6 +24,8 @@
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushSizeScroll]": "Włącz regulację rozmiaru pędzla za pomocą Ctrl + kółka myszy w narzędziu terenu.",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushStrengthScroll]": "Włącz przewijanie siły pędzla",
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushStrengthScroll]": "Włącz regulację siły pędzla za pomocą Alt + kółka myszy w narzędziu terenu.",
+  "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableAreaBulldozerBrushScroll]": "Enable Area Bulldozer brush scroll",
+  "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableAreaBulldozerBrushScroll]": "Enable Ctrl + Scroll Wheel to resize the Area Bulldozer selection brush. Only active while the Area Bulldozer tool is selected.",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.RoadStraight]": "Prosta",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey/RoadStraight/binding]": "Prosta",
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.RoadStraight]": "Ustaw tryb narzędzia wypełnienia dla stref",

@@ -24,6 +24,8 @@
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushSizeScroll]": "使用 [Ctrl + 滚轮] 调整笔刷大小",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushStrengthScroll]": "启用笔刷强度",
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushStrengthScroll]": "使用 [Alt + 滚轮] 调整笔刷强度",
+  "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableAreaBulldozerBrushScroll]": "Enable Area Bulldozer brush scroll",
+  "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableAreaBulldozerBrushScroll]": "Enable Ctrl + Scroll Wheel to resize the Area Bulldozer selection brush. Only active while the Area Bulldozer tool is selected.",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.RoadStraight]": "直线工具",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey/RoadStraight/binding]": "直线工具",
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.RoadStraight]": "设置道路直线工具",

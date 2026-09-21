@@ -24,6 +24,8 @@
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushSizeScroll]": "Ctrl + 마우스 휠로 지형 도구 브러시 크기 조절 가능",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushStrengthScroll]": "브러시 강도 조절 활성화",
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushStrengthScroll]": "Alt + 마우스 휠로 지형 도구 브러시 강도 조절 가능",
+  "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableAreaBulldozerBrushScroll]": "Enable Area Bulldozer brush scroll",
+  "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableAreaBulldozerBrushScroll]": "Enable Ctrl + Scroll Wheel to resize the Area Bulldozer selection brush. Only active while the Area Bulldozer tool is selected.",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.RoadStraight]": "직선",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey/RoadStraight/binding]": "직선",
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.RoadStraight]": "구역 도구 모드를 채우기로 설정",

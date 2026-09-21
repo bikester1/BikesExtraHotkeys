@@ -24,6 +24,8 @@
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushSizeScroll]": "Activer pour régler la taille du pinceau via Ctrl + molette dans l'outil de terrain.",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushStrengthScroll]": "Activer le réglage de l'intensité du pinceau",
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableBrushStrengthScroll]": "Activer pour régler l'intensité du pinceau via Alt + molette dans l'outil de terrain.",
+  "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableAreaBulldozerBrushScroll]": "Enable Area Bulldozer brush scroll",
+  "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.EnableAreaBulldozerBrushScroll]": "Enable Ctrl + Scroll Wheel to resize the Area Bulldozer selection brush. Only active while the Area Bulldozer tool is selected.",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.RoadStraight]": "Ligne droite",
   "Options.OPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey/RoadStraight/binding]": "Ligne droite",
   "Options.OPTION_DESCRIPTION[BikesExtraHotkeys.BikesExtraHotKey.Hotkey.ModSettings.RoadStraight]": "Définir le mode d'outil remplissage pour les zones",

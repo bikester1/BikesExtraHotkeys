@@ -14,6 +14,7 @@ namespace BikesExtraHotKey.Models.Tools
 		private readonly BrushManager _brushManager;
 		private readonly ElevationManager _elevationManager;
 		private readonly ObjectToolSystem _objectToolSystem;
+		private readonly AreaBulldozerIntegration _areaBulldozerIntegration;
 
 		public ScrollActionManager(
 			UIInputManager uiInputManager,
@@ -32,16 +33,45 @@ namespace BikesExtraHotKey.Models.Tools
 			_objectToolSystem = m_objectToolSystem;
 			_brushManager = new BrushManager(modSettings, uiInputManager, m_terrainToolSystem, m_objectToolSystem, m_toolSystem);
 			_elevationManager = new ElevationManager(modSettings, uiInputManager, m_netToolSystem);
+			_areaBulldozerIntegration = new AreaBulldozerIntegration(modSettings);
 
 			Hotkey.debugLogger.InfoWithLine($"{nameof(ScrollActionManager)} initialized");
 		}
 
 		public void CheckScrollWheelActions()
 		{
-			if (_toolSystem.activeTool is NetToolSystem)
+			// Must run every frame, not just while the Area Bulldozer tool is active,
+			// so a pending save still flushes if the user switches tools right after
+			// scrolling.
+			_areaBulldozerIntegration.Tick();
+
+			if (_areaBulldozerIntegration.IsActiveTool(_toolSystem.activeTool))
+				HandleAreaBulldozerScrollActions();
+			else if (_toolSystem.activeTool is NetToolSystem)
 				HandleNetToolScrollActions();
 			else if (_toolSystem.activeTool is TerrainToolSystem || _toolSystem.activeTool is ObjectToolSystem)
 				HandleBrushToolScrollActions();
+		}
+
+		private void HandleAreaBulldozerScrollActions()
+		{
+			if (_uiInputManager.IsHoldingCtrl())
+			{
+				_uiInputManager.DisableCameraZoom(true);
+
+				if (!_areaBulldozerIntegration.OnScroll(
+					_uiInputManager.IsZoomingIn(),
+					_uiInputManager.IsZoomingOut()))
+				{
+					// The integration is disabled (or the mod is missing), so do not
+					// swallow the camera zoom while the modifier is held.
+					_uiInputManager.DisableCameraZoom(false);
+				}
+			}
+			else
+			{
+				_uiInputManager.DisableCameraZoom(false);
+			}
 		}
 
 		private void HandleNetToolScrollActions()

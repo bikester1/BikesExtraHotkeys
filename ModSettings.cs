@@ -172,6 +172,9 @@ namespace BikesExtraHotKey.Settings
 		[SettingsUISection(sGeneral, gToolRelated)]
 		public bool EnableBrushStrengthScroll { get; set; }
 
+		[SettingsUISection(sGeneral, gToolRelated)]
+		public bool EnableAreaBulldozerBrushScroll { get; set; }
+
 		#endregion
 
 		#region About
@@ -188,6 +191,27 @@ namespace BikesExtraHotKey.Settings
 			return GeneratePage(pageId, addPrefix);
 		}
 
+		public override void Apply()
+		{
+			Hotkey.debugLogger.InfoWithLine("Apply() - applying settings");
+			base.Apply();
+		}
+
+		public override async void ApplyAndSave()
+		{
+			Hotkey.debugLogger.InfoWithLine($"ApplyAndSave() - saving settings for {GetType().Name}");
+			try
+			{
+				Apply();
+				await AssetDatabase.global.SaveSpecificSetting(GetType().Name);
+				Hotkey.debugLogger.InfoWithLine("ApplyAndSave() - settings saved successfully");
+			}
+			catch (Exception ex)
+			{
+				Hotkey.debugLogger.ErrorWithLine($"ApplyAndSave() - failed to save settings: {ex}");
+			}
+		}
+
 		public override void SetDefaults()
 		{
 			try
@@ -198,6 +222,7 @@ namespace BikesExtraHotKey.Settings
 				EnableResetElevation = false;
 				EnableBrushSizeScroll = false;
 				EnableBrushStrengthScroll = false;
+				EnableAreaBulldozerBrushScroll = true;
 
 				var properties = GetType().GetProperties()
 					.Where(p => p.PropertyType == typeof(ProxyBinding));
