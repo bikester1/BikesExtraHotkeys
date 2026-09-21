@@ -41,6 +41,10 @@ namespace BikesExtraHotKey
 
             debugLogger.InfoWithLine(nameof(OnLoad));
 
+#if DEBUG
+			DisableBacktraceReports();
+#endif
+
 			if (GameManager.instance.modManager.TryGetExecutableAsset(this, out var asset))
 			{
 				modPath = Path.GetDirectoryName(asset.path);
@@ -76,6 +80,40 @@ namespace BikesExtraHotKey
 			else
 			{
                 debugLogger.InfoWithLine($"ModSettings is NULL");
+			}
+		}
+
+		/// <summary>
+		/// Works around a Colossal.Logging/Backtrace interaction that produces a storm of
+		/// NullReferenceExceptions: when a warning or error is logged, Backtrace attaches the log
+		/// files via <c>File.ReadAllBytes</c> (FileShare.Read). If the originating logger then tries
+		/// to write, its <c>Open()</c> fails with a sharing violation, is swallowed, and
+		/// <c>Internal_WriteStream</c> dereferences a null stream. The resulting NRE is itself logged
+		/// as an error, triggering another report and repeating. Disabling Backtrace reports for the
+		/// registered loggers breaks the loop. Debug builds only.
+		/// </summary>
+		private static void DisableBacktraceReports()
+		{
+			try
+			{
+				FieldInfo loggersField = typeof(LogManager).GetField("m_Loggers", BindingFlags.Static | BindingFlags.NonPublic);
+				if (loggersField?.GetValue(null) is IDictionary loggers)
+				{
+					int count = 0;
+					foreach (object value in loggers.Values)
+					{
+						if (value is ILog log)
+						{
+							log.disableBacktrace = true;
+							count++;
+						}
+					}
+					debugLogger.InfoWithLine($"DisableBacktraceReports: disabled backtrace on {count} loggers");
+				}
+			}
+			catch (System.Exception ex)
+			{
+				debugLogger.WarnWithLine($"DisableBacktraceReports failed: {ex.Message}");
 			}
 		}
 

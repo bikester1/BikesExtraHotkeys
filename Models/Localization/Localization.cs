@@ -36,10 +36,38 @@ namespace BikesExtraHotKey.Models.Localization
 						continue;
 					}
 
+					ApplyDebugMarker(localization);
+
 					GameManager.instance.localizationManager.AddSource(localeID, new MemorySource(localization));
 				}
 			}
 			catch (Exception ex) { Hotkey.debugLogger.Error(ex); }
+		}
+
+		/// <summary>
+		/// Appends a marker to the mod's settings page (and input map) titles so a debug build is
+		/// immediately recognizable in the Options UI. This is compiled out of Release builds.
+		/// </summary>
+		private static void ApplyDebugMarker(Dictionary<string, string> localization)
+		{
+#if DEBUG
+			const string suffix = " (Debug)";
+
+			// Matches Game.Modding.ModSetting.id for this mod: {assembly}.{namespace}.{mod type}.
+			string modId = $"{typeof(Hotkey).Assembly.GetName().Name}.{typeof(Hotkey).Namespace}.{typeof(Hotkey).Name}";
+
+			string[] keys =
+			{
+				$"Options.SECTION[{modId}]",
+				$"Options.INPUT_MAP[{modId}]",
+			};
+
+			foreach (string key in keys)
+			{
+				if (localization.TryGetValue(key, out string value) && !value.EndsWith(suffix))
+					localization[key] = value + suffix;
+			}
+#endif
 		}
 	}
 }
