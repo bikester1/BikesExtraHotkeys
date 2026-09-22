@@ -41,10 +41,6 @@ namespace BikesExtraHotKey
 
             debugLogger.InfoWithLine(nameof(OnLoad));
 
-#if DEBUG
-			DisableBacktraceReports();
-#endif
-
 			if (GameManager.instance.modManager.TryGetExecutableAsset(this, out var asset))
 			{
 				modPath = Path.GetDirectoryName(asset.path);

@@ -46,6 +46,11 @@ namespace BikesExtraHotKey.Models.Tools
 		private bool _savePending;
 		private float _saveAt;
 
+		// Logging guards so the per-frame paths never spam the log.
+		private bool _lastToolActive;
+		private bool _loggedDisabledScroll;
+		private bool _loggedUnavailable;
+
 		public AreaBulldozerIntegration(ModSettings modSettings)
 		{
 			_modSettings = modSettings;
@@ -57,8 +62,21 @@ namespace BikesExtraHotKey.Models.Tools
 		/// </summary>
 		public bool IsActiveTool(object activeTool)
 		{
-			return activeTool != null &&
-			       activeTool.GetType().FullName == ToolTypeName;
+			bool isActive =
+				activeTool != null &&
+				activeTool.GetType().FullName == ToolTypeName;
+
+			if (isActive != _lastToolActive)
+			{
+				_lastToolActive = isActive;
+
+				Hotkey.debugLogger.InfoWithLine(
+					isActive
+						? "AreaBulldozerIntegration: Area Bulldozer tool is now active."
+						: "AreaBulldozerIntegration: Area Bulldozer tool is no longer active.");
+			}
+
+			return isActive;
 		}
 
 		/// <summary>
@@ -86,13 +104,35 @@ namespace BikesExtraHotKey.Models.Tools
 		{
 			if (!_modSettings.EnableAreaBulldozerBrushScroll)
 			{
+				if (!_loggedDisabledScroll)
+				{
+					_loggedDisabledScroll = true;
+
+					Hotkey.debugLogger.InfoWithLine(
+						"AreaBulldozerIntegration: Ctrl + scroll ignored because " +
+						"EnableAreaBulldozerBrushScroll is disabled.");
+				}
+
 				return false;
 			}
 
+			_loggedDisabledScroll = false;
+
 			if (!IsAvailable)
 			{
+				if (!_loggedUnavailable)
+				{
+					_loggedUnavailable = true;
+
+					Hotkey.debugLogger.WarnWithLine(
+						"AreaBulldozerIntegration: Ctrl + scroll ignored because the " +
+						"Area Bulldozer bridge is unavailable.");
+				}
+
 				return false;
 			}
+
+			_loggedUnavailable = false;
 
 			if (zoomingIn)
 			{
@@ -131,6 +171,10 @@ namespace BikesExtraHotKey.Models.Tools
 				// system. Serialises the current in-memory settings (including the
 				// BrushRadius we just changed) to disk.
 				_ = AssetDatabase.global.SaveSettings();
+
+				Hotkey.debugLogger.InfoWithLine(
+					$"AreaBulldozerIntegration: persisted brush radius " +
+					$"{GetRadius()} to disk.");
 			}
 			catch (Exception ex)
 			{
@@ -183,14 +227,30 @@ namespace BikesExtraHotKey.Models.Tools
 				object settings = _settingsProperty.GetValue(null);
 				if (settings == null)
 				{
+					Hotkey.debugLogger.WarnWithLine(
+						"AreaBulldozerIntegration: cannot change radius because " +
+						"Area Bulldozer settings are null.");
+
 					return;
 				}
 
+				int currentRadius = GetRadius();
 				int newRadius = Math.Min(
-					Math.Max(GetRadius() + delta, MIN_RADIUS),
+					Math.Max(currentRadius + delta, MIN_RADIUS),
 					MAX_RADIUS);
 
+				if (newRadius == currentRadius)
+				{
+					// Already at the limit: consume the scroll but don't log or
+					// schedule a save for a no-op.
+					return;
+				}
+
 				_brushRadiusProperty.SetValue(settings, newRadius);
+
+				Hotkey.debugLogger.InfoWithLine(
+					$"AreaBulldozerIntegration: brush radius " +
+					$"{currentRadius} -> {newRadius} (delta {delta:+#;-#;0}).");
 
 				// Make the tool drop its cached preview geometry so the new
 				// radius is visible immediately.
@@ -218,6 +278,7 @@ namespace BikesExtraHotKey.Models.Tools
 			{
 				Type modType = null;
 				Type toolType = null;
+				Assembly modAssembly = null;
 
 				foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
 				{
@@ -226,13 +287,32 @@ namespace BikesExtraHotKey.Models.Tools
 						continue;
 					}
 
+					modAssembly = assembly;
 					modType = assembly.GetType(ModTypeName);
 					toolType = assembly.GetType(ToolTypeName);
 					break;
 				}
 
+				if (modAssembly == null)
+				{
+					// Not installed (yet). Retried later in case load order changes.
+					return;
+				}
+
+				Hotkey.debugLogger.InfoWithLine(
+					$"AreaBulldozerIntegration: found assembly " +
+					$"{modAssembly.GetName().Name} (version " +
+					$"{modAssembly.GetName().Version}).");
+
 				if (modType == null || toolType == null)
 				{
+					_resolved = true;
+
+					Hotkey.debugLogger.WarnWithLine(
+						$"AreaBulldozerIntegration: assembly is loaded but types " +
+						$"'{ModTypeName}' / '{ToolTypeName}' were not found. " +
+						"Brush scroll integration disabled.");
+
 					return;
 				}
 
@@ -256,9 +336,14 @@ namespace BikesExtraHotKey.Models.Tools
 				    _brushRadiusProperty == null ||
 				    _instanceProperty == null)
 				{
+					_resolved = true;
+
 					Hotkey.debugLogger.WarnWithLine(
-						"AreaBulldozerIntegration: Area Bulldozer was found but " +
-						"its API did not match. Brush scroll integration disabled.");
+						"AreaBulldozerIntegration: API mismatch. " +
+						$"Settings={_settingsProperty != null}, " +
+						$"BrushRadius={_brushRadiusProperty != null}, " +
+						$"Instance={_instanceProperty != null}. " +
+						"Brush scroll integration disabled.");
 
 					return;
 				}
@@ -268,12 +353,16 @@ namespace BikesExtraHotKey.Models.Tools
 
 				Hotkey.debugLogger.InfoWithLine(
 					"AreaBulldozerIntegration: Area Bulldozer detected. " +
+					$"Settings.{_brushRadiusProperty.Name} is " +
+					$"{_settingsProperty.PropertyType.Name}, " +
+					$"InvalidateSelectionGeometry=" +
+					$"{_invalidateGeometryMethod != null}. " +
 					"Ctrl + scroll wheel will resize its selection brush.");
 			}
 			catch (Exception ex)
 			{
 				Hotkey.debugLogger.WarnWithLine(
-					$"AreaBulldozerIntegration.Resolve failed: {ex.Message}");
+					$"AreaBulldozerIntegration.Resolve failed: {ex}");
 			}
 		}
 	}
